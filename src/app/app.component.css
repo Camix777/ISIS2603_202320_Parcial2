@@ -1,10 +1,14 @@
 .navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background: #A7CDA6;
+
 }
 
 .navbar-title {
-    font-size: 3em;
-    font-weight: bold;
+    font-family: Inter;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: center;
+
 }
