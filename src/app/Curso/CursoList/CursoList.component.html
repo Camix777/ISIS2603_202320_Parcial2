@@ -1,0 +1,38 @@
+<!-- FILEPATH: /c:/Users/camix/Documents/Parcial2/src/app/Curso/CursoList/CursoList.component.html -->
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Plataforma</th>
+      <th>Lanzamiento</th>
+      <th>Duracion</th>
+      <th>Certificado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let curso of cursos" (click)="showCursoDetail(curso)">
+      <td>{{ curso.id }}</td>
+      <td>{{ curso.nombre }}</td>
+      <td>{{ curso.plataforma }}</td>
+      <td>{{ curso.lanzamiento }}</td>
+      <td>{{ curso.duracion }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div *ngIf="selectedCurso" class="card">
+  <img class="card-img-top" src={{selectedCurso.imagen}} alt={{selectedCurso.titulo}}>
+  <div class="card-body">
+    <h5 class="card-title">{{ selectedCurso.titulo }}</h5>
+    <p class="card-text">Descripcion: {{ selectedCurso.descripcion }}</p>
+    <p class="card-text">
+    <ng-container *ngIf="curso.certificado; else noCertificado">Si tiene certificado</ng-container>
+    <ng-template #noCertificado>No tiene certificado</ng-template>
+    </p>
+    
+  </div>
+</div>
+
+
